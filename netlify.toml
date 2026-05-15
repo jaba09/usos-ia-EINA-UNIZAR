@@ -1,0 +1,24 @@
+[build]
+  command = "pip install mkdocs-material && mkdocs build"
+  publish = "site"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+
+# Netlify Identity → permite login con Google
+[template.environment]
+  NETLIFY_GRAPH_OAUTH_REDIRECT_URI = "https://usos-ia-EINA-UNIZAR.netlify.app/admin/"
+
+# Redirige /admin a /admin/ para evitar 404
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 301
+
+# Headers de seguridad
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

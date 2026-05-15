@@ -1,0 +1,247 @@
+/* ── Paleta EINA·UNIZAR ─────────────────────────────────────────── */
+:root {
+  --md-primary-fg-color:        #005F73;  /* azul petróleo */
+  --md-primary-fg-color--light: #0A9396;
+  --md-primary-fg-color--dark:  #003D4F;
+  --md-accent-fg-color:         #EE9B00;  /* ámbar */
+  --md-typeset-a-color:         #005F73;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #0A9396;
+  --md-accent-fg-color:         #EE9B00;
+  --md-default-bg-color:        #0d1b2a;
+}
+
+/* ── Tipografía ─────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--md-primary-fg-color--dark);
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: var(--md-primary-fg-color--light);
+}
+
+/* ── Hero de la portada ─────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, #003D4F 0%, #005F73 50%, #0A9396 100%);
+  color: #fff;
+  padding: 4rem 2rem;
+  margin: -1.5rem -1.5rem 2rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #fff !important;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  opacity: 0.88;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.hero-badge {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+
+/* ── Tarjetas de estadísticas ───────────────────────────────────── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 20px rgba(0,95,115,0.15);
+  transform: translateY(-2px);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.25rem;
+}
+
+/* ── Grid de prácticas ──────────────────────────────────────────── */
+.practica-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.practica-card {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.875rem;
+  padding: 1.5rem;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+  background: var(--md-default-bg-color);
+}
+
+.practica-card:hover {
+  box-shadow: 0 6px 24px rgba(0,95,115,0.12);
+  transform: translateY(-3px);
+  border-color: var(--md-primary-fg-color--light);
+}
+
+.practica-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--md-primary-fg-color--dark);
+}
+
+[data-md-color-scheme="slate"] .practica-card h3 {
+  color: var(--md-primary-fg-color--light);
+}
+
+.practica-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  background: rgba(0,95,115,0.1);
+  color: var(--md-primary-fg-color);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.tag.accent {
+  background: rgba(238,155,0,0.12);
+  color: #b57300;
+}
+
+[data-md-color-scheme="slate"] .tag.accent {
+  color: var(--md-accent-fg-color);
+}
+
+.practica-desc {
+  font-size: 0.9rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* ── Botón CTA ──────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-block;
+  background: var(--md-accent-fg-color);
+  color: #1a1a1a !important;
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.5rem;
+  text-decoration: none !important;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* ── Ficha de práctica individual ──────────────────────────────── */
+.ficha-header {
+  background: linear-gradient(135deg, #003D4F, #005F73);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ficha-header h1 {
+  color: #fff !important;
+  margin: 0 0 1rem;
+}
+
+.ficha-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.ficha-meta-item {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  padding: 0.875rem 1rem;
+}
+
+.ficha-meta-item .label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--md-default-fg-color--light);
+  font-weight: 600;
+}
+
+.ficha-meta-item .value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+  margin-top: 0.2rem;
+}

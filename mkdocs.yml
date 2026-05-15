@@ -1,0 +1,75 @@
+site_name: Usos de IA en EINA · UNIZAR
+site_description: Repositorio de buenas prácticas docentes con inteligencia artificial en educación superior
+site_url: https://usos-ia-EINA-UNIZAR.netlify.app
+repo_url: https://github.com/TU_USUARIO/usos-ia-EINA-UNIZAR
+repo_name: usos-ia-EINA-UNIZAR
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: es
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - navigation.indexes
+    - search.highlight
+    - search.suggest
+    - content.action.edit
+    - content.action.view
+
+extra_css:
+  - assets/extra.css
+
+plugins:
+  - search:
+      lang: es
+  - tags:
+      tags_file: etiquetas.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/TU_USUARIO/usos-ia-EINA-UNIZAR
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX  # Opcional: añade tu ID de Google Analytics
+
+nav:
+  - Inicio: index.md
+  - Prácticas:
+    - practicas/index.md
+  - Etiquetas: etiquetas.md
+  - Contribuir: contribuir.md
+  - Acerca de: acerca-de.md

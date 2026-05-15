@@ -1,0 +1,148 @@
+backend:
+  name: github
+  repo: TU_USUARIO/usos-ia-EINA-UNIZAR
+  branch: main
+  base_url: https://usos-ia-EINA-UNIZAR.netlify.app
+  auth_endpoint: api/auth
+
+# Los profesores hacen login con Google a través de Netlify Identity
+# y sus envíos crean Pull Requests que tú apruebas antes de publicar
+publish_mode: editorial_workflow
+
+media_folder: docs/assets/imagenes
+public_folder: ../assets/imagenes
+
+# Idioma del panel
+locale: es
+
+collections:
+  - name: practicas
+    label: "Prácticas docentes"
+    label_singular: "Práctica docente"
+    folder: docs/practicas
+    create: true
+    slug: "{{slug}}"
+    preview_path: "practicas/{{slug}}"
+    editor:
+      preview: false
+    fields:
+
+      # ── Identificación ──────────────────────────────────────────
+      - label: "Título de la práctica"
+        name: title
+        widget: string
+        hint: "Describe brevemente qué hiciste con IA. Ej: «Uso de ChatGPT para generar casos de estudio en Termodinámica»"
+
+      - label: "Autor/a"
+        name: autor
+        widget: string
+        hint: "Tu nombre completo (se publicará en la ficha)"
+
+      - label: "Área de conocimiento"
+        name: area
+        widget: select
+        options:
+          - Ciencias
+          - Ingeniería
+          - Arquitectura
+          - Humanidades
+          - Ciencias Sociales
+          - Salud
+          - Arte y Diseño
+          - Otra
+        hint: "Área principal de tu asignatura"
+
+      - label: "Tipo de asignatura"
+        name: tipo_asignatura
+        widget: select
+        options:
+          - Teórica
+          - Práctica de laboratorio
+          - Práctica de aula
+          - Mixta (teoría + práctica)
+          - Trabajo Fin de Grado / Máster
+          - Otra
+
+      # ── Clasificación ────────────────────────────────────────────
+      - label: "Tipo de práctica docente"
+        name: tipo_practica
+        widget: select
+        options:
+          - Evaluación y feedback
+          - Metodología activa (ABP, casos, etc.)
+          - Motivación del alumnado
+          - Trabajo cooperativo
+          - Generación de materiales docentes
+          - Tutoría y apoyo al aprendizaje
+          - Tecnología educativa
+          - Investigación e innovación docente
+          - Otra
+        hint: "¿Qué aspecto docente mejora principalmente esta práctica?"
+
+      - label: "Nivel"
+        name: nivel
+        widget: select
+        options:
+          - Grado (1º-2º)
+          - Grado (3º-4º)
+          - Máster
+          - Doctorado
+          - Formación continua
+
+      - label: "Tamaño de grupo"
+        name: tamano_grupo
+        widget: select
+        options:
+          - Grande (>50 estudiantes)
+          - Mediano (20-50 estudiantes)
+          - Pequeño (<20 estudiantes)
+
+      - label: "Herramienta(s) de IA utilizadas"
+        name: herramienta_ia
+        widget: string
+        hint: "Ej: ChatGPT (GPT-4), GitHub Copilot, Midjourney, Whisper, etc."
+
+      # ── Contenido ────────────────────────────────────────────────
+      - label: "Descripción breve"
+        name: descripcion_breve
+        widget: text
+        hint: "1-2 frases que resuman la práctica. Aparecerá en la tarjeta del catálogo."
+        pattern: [".{20,300}", "Entre 20 y 300 caracteres"]
+
+      - label: "Contexto y problema que resuelve"
+        name: contexto
+        widget: markdown
+        hint: "¿En qué situación docente surgió esta práctica? ¿Qué problema o necesidad intentabas resolver?"
+
+      - label: "Descripción detallada de la práctica"
+        name: body
+        widget: markdown
+        hint: "Explica paso a paso cómo implementaste el uso de IA. Incluye prompts si los tienes."
+
+      - label: "Resultados observados"
+        name: resultados
+        widget: markdown
+        hint: "¿Qué funcionó bien? ¿Qué limitaciones encontraste? ¿Cómo respondió el alumnado?"
+
+      - label: "Referencias y recursos (opcional)"
+        name: referencias
+        widget: markdown
+        required: false
+        hint: "Artículos, guías, herramientas relacionadas. No es obligatorio."
+
+      # ── Meta ─────────────────────────────────────────────────────
+      - label: "Etiquetas"
+        name: tags
+        widget: list
+        hint: "Palabras clave separadas por coma. Ej: chatgpt, evaluacion, grado"
+        field:
+          label: Etiqueta
+          name: tag
+          widget: string
+
+      - label: "Fecha"
+        name: fecha
+        widget: date
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        default: ""
