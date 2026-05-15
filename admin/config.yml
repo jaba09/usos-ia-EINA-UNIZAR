@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: TU_USUARIO/usos-ia-EINA-UNIZAR
+  repo: jaba09/usos-ia-EINA-UNIZAR
   branch: main
   base_url: https://usos-ia-EINA-UNIZAR.netlify.app
   auth_endpoint: api/auth
