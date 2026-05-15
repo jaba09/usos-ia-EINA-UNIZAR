@@ -1,7 +1,7 @@
 site_name: Usos de IA en EINA · UNIZAR
 site_description: Repositorio de buenas prácticas docentes con inteligencia artificial en educación superior
 site_url: https://usos-ia-EINA-UNIZAR.netlify.app
-repo_url: https://github.com/TU_USUARIO/usos-ia-EINA-UNIZAR
+repo_url: https://github.com/jaba09/usos-ia-EINA-UNIZAR
 repo_name: usos-ia-EINA-UNIZAR
 edit_uri: edit/main/docs/
 
@@ -60,7 +60,7 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/TU_USUARIO/usos-ia-EINA-UNIZAR
+      link: https://github.com/jaba09/usos-ia-EINA-UNIZAR
   analytics:
     provider: google
     property: G-XXXXXXXXXX  # Opcional: añade tu ID de Google Analytics
