@@ -9,12 +9,6 @@
 [template.environment]
   NETLIFY_GRAPH_OAUTH_REDIRECT_URI = "https://usos-ia-EINA-UNIZAR.netlify.app/admin/"
 
-# Redirige /admin a /admin/ para evitar 404
-[[redirects]]
-  from = "/admin"
-  to = "/admin/"
-  status = 301
-
 # Headers de seguridad
 [[headers]]
   for = "/admin/*"
