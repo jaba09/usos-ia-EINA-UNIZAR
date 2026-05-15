@@ -1,9 +1,6 @@
 backend:
-  name: github
-  repo: jaba09/usos-ia-EINA-UNIZAR
+  name: git-gateway
   branch: main
-  base_url: https://ia-eina-unizar.netlify.app
-  auth_endpoint: api/auth
 
 # Los profesores hacen login con Google a través de Netlify Identity
 # y sus envíos crean Pull Requests que tú apruebas antes de publicar
